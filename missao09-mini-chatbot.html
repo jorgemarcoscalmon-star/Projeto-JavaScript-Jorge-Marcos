@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Missão 09 – Mini Chatbot</title>
+  <style>
+    body{font-family:Arial;padding:20px;background:#f8fafc}
+    header{text-align:center;margin-bottom:16px}
+    header h2{color:#22c55e}
+    .chat{border:1px solid #ddd;border-radius:12px;padding:12px;max-width:680px;margin:0 auto;background:#fff}
+    .link{display:inline-block;margin-bottom:12px;text-decoration:none;color:#0f172a}
+    footer{text-align:center;margin-top:20px;padding-top:10px;border-top:1px solid #ddd;color:#555}
+    footer strong{color:#22c55e}
+  </style>
+</head>
+<body>
+  <header><h2>Projeto JavaScript – SeuNome</h2></header>
+  <a class="link" href="index.html">← Voltar ao menu</a>
+  <div class="chat">
+    <h3>Chatbot Educacional</h3>
+    <input id="pergunta" placeholder="Pergunte sobre estudo, horário, ajuda..." style="width:75%"/>
+    <button onclick="responder()">Enviar</button>
+    <p id="saida"></p>
+  </div>
+  <footer><small>Desenvolvido por <strong>SeuNome</strong></small></footer>
+  <script>
+    // IA de regras simples (sem servidor)
+    function responder(){
+      const q=(document.getElementById('pergunta').value||'').toLowerCase();
+      let a='Não entendi. Pode reformular?';
+      if(q.includes('estudar')) a='Estude 25–30 min e pause 5 min (Técnica Pomodoro).';
+      else if(q.includes('horário')||q.includes('agenda')) a='Sugestão: 19h–20h30 de seg a qui.';
+      else if(q.includes('ajuda')) a='Claro! Qual matéria? Posso indicar exercícios.';
+      else if(q.includes('matem')) a='Use prática diária de problemas curtos e revise erros.';
+      document.getElementById('saida').textContent=a;
+    }
+  </script>
+</body>
+</html>

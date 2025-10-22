@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Missão 10 – Memória Lite</title>
+  <style>
+    body{font-family:Arial;padding:20px;background:#f8fafc}
+    header{text-align:center;margin-bottom:16px}
+    header h2{color:#22c55e}
+    .grid{display:grid;grid-template-columns:repeat(4,70px);gap:10px;justify-content:center}
+    .carta{width:70px;height:70px;display:flex;align-items:center;justify-content:center;border:1px solid #bbb;border-radius:10px;cursor:pointer;font-size:24px;background:#fff}
+    .aberta{background:#d1ffd8}
+    .wrap{max-width:560px;margin:0 auto;background:#fff;border:1px solid #ddd;border-radius:12px;padding:16px}
+    .link{display:inline-block;margin-bottom:12px;text-decoration:none;color:#0f172a}
+    footer{text-align:center;margin-top:20px;padding-top:10px;border-top:1px solid #ddd;color:#555}
+    footer strong{color:#22c55e}
+  </style>
+</head>
+<body>
+  <header><h2>Projeto JavaScript – SeuNome</h2></header>
+  <a class="link" href="index.html">← Voltar ao menu</a>
+  <div class="wrap">
+    <h3>Memória – 2 pares</h3>
+    <div class="grid" id="grid"></div>
+    <p id="msg"></p>
+  </div>
+  <footer><small>Desenvolvido por <strong>SeuNome</strong></small></footer>
+  <script>
+    // Embaralha, abre duas cartas e compara
+    const valores=['🍎','🍎','⭐','⭐'];
+    const cartas=valores.sort(()=>Math.random()-0.5);
+    const grid=document.getElementById('grid');
+    let aberto=[], travado=false, acertos=0;
+    cartas.forEach((v,i)=>{
+      const div=document.createElement('div');
+      div.className='carta';
+      div.dataset.valor=v; div.dataset.idx=i;
+      div.onclick=()=> abrir(div);
+      grid.appendChild(div);
+    });
+    function abrir(el){
+      if(travado||el.classList.contains('aberta')) return;
+      el.textContent=el.dataset.valor; el.classList.add('aberta');
+      aberto.push(el);
+      if(aberto.length===2){
+        travado=true;
+        setTimeout(()=>{
+          const [a,b]=aberto;
+          if(a.dataset.valor===b.dataset.valor){
+            acertos++;
+            if(acertos===2) msg.textContent='Parabéns! 🎉';
+          } else {
+            a.textContent=''; a.classList.remove('aberta');
+            b.textContent=''; b.classList.remove('aberta');
+          }
+          aberto=[]; travado=false;
+        },600);
+      }
+    }
+  </script>
+</body>
+</html>

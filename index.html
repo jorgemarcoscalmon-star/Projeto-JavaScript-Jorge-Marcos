@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projeto JavaScript – SeuNome</title>
+  <style>
+    :root{--bg:#0f172a;--card:#0b1220;--txt:#e5e7eb;--acc:#22c55e;--muted:#94a3b8}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,Segoe UI,Arial;background:linear-gradient(135deg,#0f172a,#111827);color:var(--txt)}
+    header{padding:24px 16px;text-align:center;background:rgba(255,255,255,.05)}
+    header h1{margin:0 0 8px;font-size:28px;color:var(--acc)}
+    header p{margin:0;color:var(--muted)}
+    .container{max-width:1000px;margin:0 auto;padding:16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0 0 14px;color:var(--muted);min-height:40px}
+    .btn{display:inline-block;width:100%;text-align:center;padding:10px 12px;border-radius:10px;border:0;background:var(--acc);color:#0b1220;font-weight:600;text-decoration:none}
+    footer{padding:24px 16px;text-align:center;color:var(--muted);margin-top:20px;border-top:1px solid rgba(255,255,255,.08)}
+    footer strong{color:var(--acc)}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projeto JavaScript – SeuNome</h1>
+    <p>Aprenda JS em 10 missões interativas 🚀</p>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <!-- cards de missões (mantidos conforme antes) -->
+      <div class="card">
+        <h3>Missão 01 – Botões Básicos</h3>
+        <p>Altere texto e cor usando DOM.</p>
+        <a class="btn" href="missao01-botoes-basicos.html">Acessar</a>
+      </div>
+      <!-- ... demais missões ... -->
+    </div>
+  </main>
+
+  <footer>
+    <small>Desenvolvido por <strong>SeuNome</strong> 💻</small>
+  </footer>
+</body>
+</html>
+
+

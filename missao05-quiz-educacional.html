@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Missão 05 – Quiz Educacional</title>
+  <style>
+    body{font-family:Arial;padding:20px;background:#f8fafc}
+    header{text-align:center;margin-bottom:16px}
+    header h2{color:#22c55e}
+    .q{border:1px solid #ddd;padding:16px;border-radius:12px;max-width:620px;margin:0 auto;background:#fff}
+    .link{display:inline-block;margin-bottom:12px;text-decoration:none;color:#0f172a}
+    footer{text-align:center;margin-top:20px;padding-top:10px;border-top:1px solid #ddd;color:#555}
+    footer strong{color:#22c55e}
+  </style>
+</head>
+<body>
+  <header><h2>Projeto JavaScript – SeuNome</h2></header>
+  <a class="link" href="index.html">← Voltar ao menu</a>
+  <div class="q">
+    <h3>Qual é o resultado de 2 + 2?</h3>
+    <label><input type="radio" name="a" value="3"> 3</label><br>
+    <label><input type="radio" name="a" value="4"> 4</label><br>
+    <label><input type="radio" name="a" value="5"> 5</label><br>
+    <button id="verificar">Verificar</button>
+    <p id="res"></p>
+  </div>
+  <footer><small>Desenvolvido por <strong>SeuNome</strong></small></footer>
+  <script>
+    // Lê opção marcada e compara com gabarito
+    document.getElementById('verificar').onclick=()=>{
+      const marcado=document.querySelector('input[name="a"]:checked');
+      document.getElementById('res').textContent = !marcado? 'Escolha uma opção.' : (marcado.value==='4'?'Correto! ✅':'Tente novamente.');
+    }
+  </script>
+</body>
+</html>
+

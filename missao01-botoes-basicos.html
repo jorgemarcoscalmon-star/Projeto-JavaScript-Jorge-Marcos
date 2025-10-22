@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Missão 01 – Botões Básicos</title>
+  <style>
+    body{font-family:system-ui,Arial;padding:20px;background:#f8fafc}
+    header{margin-bottom:16px;text-align:center}
+    header h2{color:#22c55e}
+    .card{border:1px solid #e6e6e6;border-radius:14px;padding:16px;max-width:560px;margin:0 auto;background:#fff}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;background:#22c55e;color:#0b1220;font-weight:600;margin:4px}
+    .link{display:inline-block;margin-bottom:14px;text-decoration:none;color:#0f172a}
+    footer{text-align:center;margin-top:20px;padding-top:10px;border-top:1px solid #ddd;color:#555}
+    footer strong{color:#22c55e}
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Projeto JavaScript – SeuNome</h2>
+  </header>
+
+  <a class="link" href="index.html">← Voltar ao menu</a>
+
+  <div class="card">
+    <h2 id="titulo">Bem-vindo(a)!</h2>
+    <p id="msg">Clique nos botões para interagir.</p>
+    <button class="btn" onclick="mudarTexto()">Mudar texto</button>
+    <button class="btn" onclick="mudarCor()">Mudar cor</button>
+  </div>
+
+  <footer>
+    <small>Desenvolvido por <strong>SeuNome</strong></small>
+  </footer>
+
+  <script>
+    // Seleciona elementos pelo id e altera texto/estilo
+    function mudarTexto(){
+      document.getElementById('msg').textContent = 'Texto alterado com JS! ✅';
+    }
+    function mudarCor(){
+      document.getElementById('titulo').style.color = '#0a7';
+    }
+  </script>
+</body>
+</html>
